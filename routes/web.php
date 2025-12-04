@@ -14,7 +14,18 @@ Route::view('dashboard', 'dashboard')
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::prefix('phase')->name('phase.')->group(function () {
-        Volt::route('strategy/index', 'phase.strategy.index')->name('strategy.index');
+        Route::prefix('action')->name('action.')->group(function () {
+            Volt::route('index', 'phase.action.index')->name('index');
+        });
+        Route::prefix('agenda')->name('agenda.')->group(function () {
+            Volt::route('index', 'phase.agenda.index')->name('index');
+        });
+        Route::prefix('status')->name('status.')->group(function () {
+            Volt::route('index', 'phase.status.index')->name('index');
+        });
+        Route::prefix('strategy')->name('strategy.')->group(function () {
+            Volt::route('index', 'phase.strategy.index')->name('index');
+        });
     });
 });
 

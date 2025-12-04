@@ -16,7 +16,7 @@
             </flux:sidebar.header>
 
             <flux:sidebar.nav>
-                <flux:sidebar.item icon="identification" href="#" current>{{ __('Player Card') }}</flux:sidebar.item>
+                <flux:sidebar.item icon="identification" :href="route('dashboard')" :current="request()->routeIs('dashboard')">{{ __('Player Card') }}</flux:sidebar.item>
                 <flux:sidebar.item icon="agenda-card" href="#">{{ __('Agenda Card') }}</flux:sidebar.item>
                 <flux:sidebar.item icon="action-card" href="#">{{ __('Action Card') }}</flux:sidebar.item>
                 <flux:sidebar.item icon="beaker" href="#">{{ __('Technology') }}</flux:sidebar.item>
@@ -72,15 +72,27 @@
             </flux:dropdown>
         </flux:sidebar>
 
-        <flux:header>
+        <flux:header class="flex flex-row space-x-1">
             <a href="{{ route('phase.strategy.index') }}" @class([
-                'text-sm uppercase tracking-wider shadow-inner rounded-t-lg px-3 py-2',
+                'text-sm uppercase tracking-wider shadow-inner rounded-t-xl px-4 py-3',
                 'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white hover:bg-zinc-800/5 dark:hover:bg-white/10' => !request()->routeIs('phase.strategy.index'),
                 'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-white/20' => request()->routeIs('phase.strategy.index'),
             ]) wire:navigate>{{ __('Strategy') }}</a>
-            <flux:navbar.item href="#">{{ __('Action') }}</flux:navbar.item>
-            <flux:navbar.item href="#">{{ __('Status') }}</flux:navbar.item>
-            <flux:navbar.item href="#">{{ __('Agenda') }}</flux:navbar.item>
+            <a href="{{ route('phase.action.index') }}" @class([
+                'text-sm uppercase tracking-wider shadow-inner rounded-t-xl px-4 py-3',
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white hover:bg-zinc-800/5 dark:hover:bg-white/10' => !request()->routeIs('phase.action.index'),
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-white/20' => request()->routeIs('phase.action.index'),
+            ]) wire:navigate>{{ __('Action') }}</a>
+            <a href="{{ route('phase.status.index') }}" @class([
+                'text-sm uppercase tracking-wider shadow-inner rounded-t-xl px-4 py-3',
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white hover:bg-zinc-800/5 dark:hover:bg-white/10' => !request()->routeIs('phase.status.index'),
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-white/20' => request()->routeIs('phase.status.index'),
+            ]) wire:navigate>{{ __('Status') }}</a>
+            <a href="{{ route('phase.agenda.index') }}" @class([
+                'text-sm uppercase tracking-wider shadow-inner rounded-t-xl px-4 py-3',
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white hover:bg-zinc-800/5 dark:hover:bg-white/10' => !request()->routeIs('phase.agenda.index'),
+                'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-white/20' => request()->routeIs('phase.agenda.index'),
+            ]) wire:navigate>{{ __('Agenda') }}</a>
             <flux:spacer />
             <flux:navbar scrollable>
                 <flux:navbar.item href="#">Dashboard</flux:navbar.item>

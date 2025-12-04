@@ -7,5 +7,5 @@ new class extends Component {
 }; ?>
 
 <div>
-    Strategy Phase
+    Action Phase
 </div>
