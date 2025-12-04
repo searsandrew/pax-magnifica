@@ -12,6 +12,12 @@ Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::prefix('phase')->name('phase.')->group(function () {
+        Volt::route('strategy/index', 'phase.strategy.index')->name('strategy.index');
+    });
+});
+
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
 
