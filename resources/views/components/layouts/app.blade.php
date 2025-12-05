@@ -94,10 +94,16 @@
                 'text-zinc-500 dark:text-white/80 hover:text-zinc-800 dark:hover:text-white bg-zinc-50 dark:bg-zinc-900 hover:bg-zinc-100 dark:hover:bg-white/20' => request()->routeIs('phase.agenda.index'),
             ]) wire:navigate>{{ __('Agenda') }}</a>
             <flux:spacer />
-            <flux:navbar scrollable>
-                <flux:navbar.item href="#">Dashboard</flux:navbar.item>
-                <flux:navbar.item badge="32" href="#">Orders</flux:navbar.item>
-            </flux:navbar>
+            <div class="flex flex-row items-center gap-2">
+                <span class="flex flex-row bg-slate-200 text-slate-800 border border-solid border-slate-600 shadow-inner rounded-full min-w-16 px-3 py-2 text-xs items-center justify-between">
+                    <flux:icon.commodities variant="micro" />
+                    <span>0</span>
+                </span>
+                <span class="flex flex-row bg-yellow-200 text-yellow-800 border border-solid border-yellow-600 shadow-inner rounded-full min-w-16 px-3 py-2 text-xs items-center justify-between">
+                    <flux:icon.trade-goods variant="micro" />
+                    <span>0</span>
+                </span>
+            </div>
         </flux:header>
 
         <flux:main>
