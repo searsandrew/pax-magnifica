@@ -95,13 +95,13 @@
             ]) wire:navigate>{{ __('Agenda') }}</a>
             <flux:spacer />
             <div class="flex flex-row items-center gap-2">
-                <span class="flex flex-row bg-slate-200 text-slate-800 border border-solid border-slate-600 shadow-inner rounded-full min-w-16 px-3 py-2 text-xs items-center justify-between">
-                    <flux:icon.commodities variant="micro" />
-                    <span>0</span>
+                <span class="flex flex-row bg-slate-200 text-slate-800 border border-solid border-slate-600 shadow-inner rounded-full min-w-20 px-3 py-2 text-sm items-center justify-between">
+                    <flux:icon.commodities variant="mini" />
+                    <span class="font-bold">0</span>
                 </span>
-                <span class="flex flex-row bg-yellow-200 text-yellow-800 border border-solid border-yellow-600 shadow-inner rounded-full min-w-16 px-3 py-2 text-xs items-center justify-between">
-                    <flux:icon.trade-goods variant="micro" />
-                    <span>0</span>
+                <span class="flex flex-row bg-yellow-200 text-yellow-800 border border-solid border-yellow-600 shadow-inner rounded-full min-w-20 px-3 py-2 text-sm items-center justify-between">
+                    <flux:icon.trade-goods variant="mini" />
+                    <span class="font-bold">0</span>
                 </span>
             </div>
         </flux:header>
